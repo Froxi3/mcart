@@ -1,4 +1,8 @@
 <?
+$PERM["buyersAccount"]["*"]="D";
+$PERM["buyersAccount"]["6"]="X";
+$PERM["sellersAccount"]["*"]="D";
+$PERM["sellersAccount"]["7"]="X";
 $PERM["search"]["5"]="W";
 $PERM["products"]["5"]="W";
 $PERM["services"]["5"]="W";
