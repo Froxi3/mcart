@@ -126,5 +126,5 @@ $APPLICATION->SetTitle("Мебельная компания");
 		"IBLOCK_TYPE" => "products"
 	)
 );?>
-<p>
-</p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
