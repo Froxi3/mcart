@@ -1,8 +1,12 @@
 <?
-$PERM["buyersAccount"]["*"]="D";
-$PERM["buyersAccount"]["6"]="X";
-$PERM["sellersAccount"]["*"]="D";
+$PERM["sellersAccount"]["2"]="D";
+$PERM["sellersAccount"]["6"]="D";
 $PERM["sellersAccount"]["7"]="X";
+$PERM["sellersAccount"]["*"]="D";
+$PERM["buyersAccount"]["2"]="D";
+$PERM["buyersAccount"]["6"]="X";
+$PERM["buyersAccount"]["7"]="D";
+$PERM["buyersAccount"]["*"]="D";
 $PERM["search"]["5"]="W";
 $PERM["products"]["5"]="W";
 $PERM["services"]["5"]="W";
