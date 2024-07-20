@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?=LANGUAGE_ID?>">
 
 <head>
     <title>HomeSpace &mdash; Colorlib Website Template</title>
