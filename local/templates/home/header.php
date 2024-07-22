@@ -34,7 +34,6 @@
     <?php $APPLICATION->Showpanel();?>
 
     <div class="site-loader"></div>
-
     <div class="site-wrap">
         <div class="site-mobile-menu">
             <div class="site-mobile-menu-header">
@@ -61,7 +60,7 @@
                                             "AREA_FILE_SHOW" => "file",
                                             "AREA_FILE_SUFFIX" => "inc",
                                             "EDIT_TEMPLATE" => "",
-                                            "PATH" => "include/home/header/phone.php"
+                                            "PATH" => SITE_DIR . "/include/home/header/phone.php"
                                         )
                                     );?>
                                 </span>
@@ -74,9 +73,9 @@
                                         "",
                                         Array(
                                             "AREA_FILE_SHOW" => "file",
-                                            "AREA_FILE_SUFFIX" => "inc",
+                                            "AREA_FILE_SUFFIX" => "",
                                             "EDIT_TEMPLATE" => "",
-                                            "PATH" => "include/home/header/email.php"
+                                            "PATH" => SITE_DIR . "/include/home/header/email.php"
                                         )
                                     );?>
                                 </span>
@@ -89,9 +88,9 @@
                             "",
                             Array(
                                 "AREA_FILE_SHOW" => "file",
-                                "AREA_FILE_SUFFIX" => "inc",
+                                "AREA_FILE_SUFFIX" => "",
                                 "EDIT_TEMPLATE" => "",
-                                "PATH" => "include/home/header/socials.php"
+                                "PATH" => SITE_DIR . "/include/home/header/socials.php"
                             )
                         );?>
                     </div>
@@ -110,9 +109,9 @@
                                     "",
                                     Array(
                                         "AREA_FILE_SHOW" => "file",
-                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "AREA_FILE_SUFFIX" => "",
                                         "EDIT_TEMPLATE" => "",
-                                        "PATH" => "include/home/header/logo.php"
+                                        "PATH" => SITE_DIR . "/include/home/header/logo.php"
                                     )
                                 );?>
                             </a>
@@ -120,57 +119,30 @@
                     </div>
                     <div class="col-4 col-md-4 col-lg-8">
                         <nav class="site-navigation text-right text-md-right" role="navigation">
-                            <?$APPLICATION->IncludeComponent(
-                                "bitrix:menu", 
-                                "horizontal_multilevel", 
-                                array(
-                                    "ROOT_MENU_TYPE" => "top",
-                                    "MAX_LEVEL" => "2",
-                                    "CHILD_MENU_TYPE" => "left",
-                                    "USE_EXT" => "Y",
-                                    "MENU_CACHE_TYPE" => "A",
-                                    "MENU_CACHE_TIME" => "36000000",
-                                    "MENU_CACHE_USE_GROUPS" => "Y",
-                                    "MENU_CACHE_GET_VARS" => array(
-                                    ),
-                                    "COMPONENT_TEMPLATE" => "horizontal_multilevel",
-                                    "DELAY" => "N",
-                                    "ALLOW_MULTI_SELECT" => "N"
-                                ),
-                                false,
-                                array(
-                                    "ACTIVE_COMPONENT" => "Y"
-                                )
-                            );?>
+                            
                             <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3">
                                 <a href="#" class="site-menu-toggle js-menu-toggle text-black">
                                     <span class="icon-menu h3"></span>
                                 </a>
                             </div>
-                            <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                <li class="active">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li class="has-children">
-                                    <a href="properties.html">Properties</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Buy</a></li>
-                                        <li><a href="#">Rent</a></li>
-                                        <li><a href="#">Lease</a></li>
-                                        <li class="has-children">
-                                            <a href="#">Menu</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Menu One</a></li>
-                                                <li><a href="#">Menu Two</a></li>
-                                                <li><a href="#">Menu Three</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
+                            <?$APPLICATION->IncludeComponent("bitrix:menu", "topMenu", Array(
+                                "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+                                    "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                                    "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                                    "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                                    "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                                    "MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+                                    "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                                    "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                                    "COMPONENT_TEMPLATE" => "horizontal_multilevel",
+                                    "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                                    "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                                ),
+                                false,
+                                array(
+                                "ACTIVE_COMPONENT" => "Y"
+                                )
+                            );?>
                         </nav>
                     </div>
                 </div>

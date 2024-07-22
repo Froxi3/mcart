@@ -12,57 +12,33 @@
                             "AREA_FILE_SHOW" => "file",
                             "AREA_FILE_SUFFIX" => "inc",
                             "EDIT_TEMPLATE" => "",
-                            "PATH" => "include/home/footer/about.php"
+                            "PATH" => SITE_DIR . "/include/home/footer/about.php"
                         )
                     );?>
                 </div>
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <div class="row mb-5">
-                    <?$APPLICATION->IncludeComponent(
-                        "bitrix:menu", 
-                        "horizontal_multilevel", 
-                        array(
-                            "ROOT_MENU_TYPE" => "top",
-                            "MAX_LEVEL" => "2",
-                            "CHILD_MENU_TYPE" => "left",
-                            "USE_EXT" => "Y",
-                            "MENU_CACHE_TYPE" => "A",
-                            "MENU_CACHE_TIME" => "36000000",
-                            "MENU_CACHE_USE_GROUPS" => "Y",
-                            "MENU_CACHE_GET_VARS" => array(
-                            ),
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "bottomMenu", Array(
+                        "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+                            "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                            "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                            "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                            "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                            "MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+                            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                            "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
                             "COMPONENT_TEMPLATE" => "horizontal_multilevel",
-                            "DELAY" => "N",
-                            "ALLOW_MULTI_SELECT" => "N"
+                            "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
                         ),
                         false,
                         array(
-                            "ACTIVE_COMPONENT" => "Y"
+                        "ACTIVE_COMPONENT" => "Y"
                         )
-                    );?>
-                    <div class="col-md-12">
-                        <h3 class="footer-heading mb-4">Navigations</h3>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Buy</a></li>
-                            <li><a href="#">Rent</a></li>
-                            <li><a href="#">Properties</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Terms</a></li>
-                        </ul>
-                    </div>
+                    );?> 
                 </div>
             </div>
-
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:main.include",
@@ -71,7 +47,7 @@
                         "AREA_FILE_SHOW" => "file",
                         "AREA_FILE_SUFFIX" => "inc",
                         "EDIT_TEMPLATE" => "",
-                        "PATH" => "include/home/footer/socials.php"
+                        "PATH" => SITE_DIR . "/include/home/footer/socials.php"
                     )
                 );?>
             </div>
@@ -85,7 +61,7 @@
                         "AREA_FILE_SHOW" => "file",
                         "AREA_FILE_SUFFIX" => "inc",
                         "EDIT_TEMPLATE" => "",
-                        "PATH" => "include/home/footer/copyright.php"
+                        "PATH" => SITE_DIR . "/include/home/footer/copyright.php"
                     )
                 );?>
             </div>
