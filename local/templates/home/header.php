@@ -4,7 +4,7 @@
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-    <title>HomeSpace &mdash; Colorlib Website Template</title>
+    <title><?$APPLICATION->ShowTitle()?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -149,3 +149,23 @@
             </div>
         </div>
     </div>
+    <?if ($GLOBALS["APPLICATION"]->GetCurPage() != "/"):?>
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-md-10">
+                    <h1 class="mb-2"><?=$APPLICATION->ShowTitle()?></h1>
+                        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "homeBreadCrumb", Array(
+                                "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                                "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                                "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+                            ),
+                            false
+                        );?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?endif;?>
+    
+    
