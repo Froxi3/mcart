@@ -8,14 +8,6 @@ $arUrlRewrite=array (
     'PATH' => '/about/vacancies/index.php',
     'SORT' => 100,
   ),
-  9 => 
-  array (
-    'CONDITION' => '#^/about/news/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/about/news/index.php',
-    'SORT' => 100,
-  ),
   0 => 
   array (
     'CONDITION' => '#^/services/#',
