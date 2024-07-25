@@ -60,6 +60,12 @@ $APPLICATION->IncludeComponent(
 <br />
 <?php
 endif;
+
+if($GLOBALS["APPLICATION"]->GetCurPage() != "/ads/"):
+	$GLOBALS['filterUser'] = array('CREATED_USER_ID' => $GLOBALS['USER']->GetID());
+	$arParams["FILTER_NAME"] = "filterUser";
+endif;
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -109,6 +115,7 @@ $APPLICATION->IncludeComponent(
 		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
+		"TITLE_ADS" => $arParams["TITLE_ADS"],
 	],
 	$component
 );

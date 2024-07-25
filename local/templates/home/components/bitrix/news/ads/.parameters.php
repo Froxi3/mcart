@@ -28,6 +28,11 @@ $arTemplateParameters = array(
 		"DEFAULT" =>"N",
 		"REFRESH"=> "Y",
 	),
+	"TITLE_ADS" => Array(
+		"NAME" => GetMessage("T_NAME_FOR_LIST_ADS"),
+		"TYPE" => "STRING",
+		"DEFAULT" => "",
+	)
 );
 
 if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
@@ -76,5 +81,5 @@ if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
 		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_SHARE_SHORTEN_URL_KEY"),
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
-	);
+	);	
 }

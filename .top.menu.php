@@ -22,14 +22,14 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Личный кабинет продавца", 
+		"ЛК продавца", 
 		"/sellersAccount/", 
 		Array(), 
 		Array(), 
 		"CSite::InGroup(array(1,7))" 
 	),
 	Array(
-		"Личный кабинет покупателя", 
+		"ЛК покупателя", 
 		"/buyersAccount/", 
 		Array(), 
 		Array(), 

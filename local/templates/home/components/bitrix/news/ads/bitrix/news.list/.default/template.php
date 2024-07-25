@@ -12,6 +12,10 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<?if(!empty(trim($arParams["TITLE_ADS"]))):;
+	$APPLICATION->SetTitle($arParams["TITLE_ADS"]);
+endif;?>
+
 <div class="site-section site-section-sm bg-light">
 	<div class="container">
 		<div class="row mb-5">

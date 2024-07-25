@@ -101,7 +101,7 @@
         <div class="site-navbar">
             <div class="container py-1">
                 <div class="row align-items-center">
-                    <div class="col-8 col-md-8 col-lg-4">
+                    <div class="col-8 col-md-8 col-lg-3">
                         <h1 class="">
                             <a href="/" class="h5 text-uppercase text-black">
                                 <?$APPLICATION->IncludeComponent(
@@ -117,7 +117,7 @@
                             </a>
                         </h1>
                     </div>
-                    <div class="col-4 col-md-4 col-lg-8">
+                    <div class="col-4 col-md-4 col-lg-9">
                         <nav class="site-navigation text-right text-md-right" role="navigation">
                             
                             <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3">
