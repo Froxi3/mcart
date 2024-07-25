@@ -35,11 +35,19 @@ $this->setFrameMode(true);
           	<div class="col-lg-8" style="margin-top: -150px;">
             	<div class="mb-5">
               		<div class="slide-one-item home-slider owl-carousel">
-						<?foreach($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"] as $value):?>
+					
+						<?if(is_array($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["DISPLAY_VALUE"])):?>
+							<?foreach($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"] as $value):?>
+								<div>
+									<img src="<?=$value["SRC"]?>" alt="Image" class="img-fluid">
+								</div>
+							<?endforeach;
+						else:?>
 							<div>
-								<img src="<?=$value["SRC"]?>" alt="Image" class="img-fluid">
+								<img src="<?=$arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"]["SRC"]?>" 
+									alt="Image" class="img-fluid">
 							</div>
-						<?endforeach;?>
+						<?endif;?>
               		</div>
             	</div>
 
@@ -115,15 +123,26 @@ $this->setFrameMode(true);
 								<?=GetMessage("MFT_GALLERY_SECTION")?>
 							</h2>
 						</div>
-						<?foreach($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"] as $value):?>
+
+						<?if(is_array($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["DISPLAY_VALUE"])):?>
+							<?foreach($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"] as $value):?>
+								<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+									<a href="<?=$value["SRC"]?>" class="image-popup gal-item">
+										<img src="<?=$value["SRC"]?>" alt="Image" class="img-fluid">
+									</a>
+								</div>
+							<?endforeach;
+						else:?>
 							<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-								<a href="<?=$value["SRC"]?>" class="image-popup gal-item">
-									<img src="<?=$value["SRC"]?>" alt="Image" class="img-fluid">
+								<a href="<?=$arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"]["SRC"]?>" 
+									class="image-popup gal-item">
+
+									<img src="<?=$arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"]["SRC"]?>" 
+										alt="Image" class="img-fluid">
 								</a>
 							</div>
-						<?endforeach;?>
+						<?endif;?>
 					</div>
-
 					<div>
 						<h2 class="h4 text-black">
 							<?=$arResult["DISPLAY_PROPERTIES"]["MATERIALS"]["NAME"]?>
