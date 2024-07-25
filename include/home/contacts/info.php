@@ -1,8 +1,9 @@
-<div class="site-section-title mb-3">
-    <h2>Наши контакты</h2>
-</div>
-<p>Адрес: г. Новосибирск, ул. Строительная, д. 45<br>
-Телефон: +2 102 3923 3922<br>
-Электронная почта: info@domain.com<br>
-График работы: Понедельник–Пятница: с 9:00 до 17:00 Суббота: с 11:00 до 16:00<br>
-Мы всегда рады помочь вам и ответить на ваши вопросы. Свяжитесь с нами удобным для вас способом.</p>
+<h3 class="h6 text-black mb-3 text-uppercase">Contact Info</h3>
+<p class="mb-0 font-weight-bold">Address</p>
+<p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+
+<p class="mb-0 font-weight-bold">Phone</p>
+<p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+
+<p class="mb-0 font-weight-bold">Email Address</p>
+<p class="mb-0"><a href="#">youremail@domain.com</a></p>
