@@ -12,16 +12,17 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?if(!empty(trim($arParams["TITLE_ADS"]))):;
-	$APPLICATION->SetTitle($arParams["TITLE_ADS"]);
-endif;?>
 
 <div class="site-section site-section-sm bg-light">
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-12">
 				<div class="site-section-title">
-					<h2><?=GetMessage("MFT_NEW_ADS_SECTION")?></h2>
+					<?if(!empty(trim($arParams["TITLE_ADS"]))):?>
+						<h2><?=$arParams["TITLE_ADS"]?></h2>
+					<?else:?>
+						<h2><?=GetMessage("MFT_NEW_ADS_SECTION")?></h2>
+					<?endif;?>	
 				</div>
 			</div>
 		</div>
