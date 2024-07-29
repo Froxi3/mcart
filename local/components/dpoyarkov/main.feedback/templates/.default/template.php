@@ -12,7 +12,7 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 
 ?>
 
-<form action="<?=POST_FORM_ACTION_URI?>" method="POST">
+<form action="<?=POST_FORM_ACTION_URI?>" method="POST" class="p-5 bg-white border">
 <?=bitrix_sessid_post()?>
 	<div class="row form-group">
 		<div class="col-md-12 mb-3 mb-md-0">

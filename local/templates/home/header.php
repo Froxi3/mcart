@@ -83,16 +83,19 @@
                         </p>
                     </div>
                     <div class="col-6 col-md-6 text-right">
-                        <?$APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            "",
-                            Array(
-                                "AREA_FILE_SHOW" => "file",
-                                "AREA_FILE_SUFFIX" => "",
-                                "EDIT_TEMPLATE" => "",
-                                "PATH" => SITE_DIR . "/include/home/header/socials.php"
-                            )
-                        );?>
+                        <div>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => SITE_DIR . "/include/home/header/socials.php"
+                                )
+                            );?>
+                        </div>
+                        <div><a href="/login/auth.php">Авторизация</a></div>
                     </div>
                 </div>
             </div>
