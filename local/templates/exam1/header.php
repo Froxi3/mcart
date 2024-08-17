@@ -52,7 +52,7 @@ $curH = date("H");
                         Array(
                             "FORGOT_PASSWORD_URL" => "/s2/login/",
                             "PROFILE_URL" => "/s2/login/user.php",
-                            "REGISTER_URL" => "",
+                            "REGISTER_URL" => "/s2/login/",
                             "SHOW_ERRORS" => "N"
                         )
                     );?>

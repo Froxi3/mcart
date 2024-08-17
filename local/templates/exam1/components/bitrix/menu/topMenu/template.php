@@ -18,26 +18,26 @@ foreach($arResult as $arItem):?>
 		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
 	<?endif?>
 
-	<?if ($arItem["IS_PARENT"]):?>
+	<?if ($arItem["PERMISSION"] > "D"):?>
 
-		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-			<li>
-				<a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
-				<ul>
-					<?if($arItem["PARAMS"]["TEXT"]):?>
-						<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
-					<?endif;?>
+		<?if ($arItem["IS_PARENT"]):?>
+
+			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
+				<li>
+					<a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+					<ul>
+						<?if($arItem["PARAMS"]["TEXT"]):?>
+							<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
+						<?endif;?>
+			<?else:?>
+				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+					<ul>
+						<?if($arItem["PARAMS"]["TEXT"]):?>
+							<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
+						<?endif;?>
+			<?endif?>
+
 		<?else:?>
-			<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
-				<ul>
-					<?if($arItem["PARAMS"]["TEXT"]):?>
-						<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
-					<?endif;?>
-		<?endif?>
-
-	<?else:?>
-
-		<?if ($arItem["PERMISSION"] > "D"):?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
 				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
@@ -47,10 +47,9 @@ foreach($arResult as $arItem):?>
 
 		<?endif?>
 
+		<?$previousLevel = $arItem["DEPTH_LEVEL"];?>
+		
 	<?endif?>
-
-	<?$previousLevel = $arItem["DEPTH_LEVEL"];?>
-
 <?endforeach?>
 
 <?if ($previousLevel > 1)://close last item tags?>

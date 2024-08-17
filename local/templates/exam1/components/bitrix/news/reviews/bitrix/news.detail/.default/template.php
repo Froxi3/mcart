@@ -43,7 +43,7 @@ $this->setFrameMode(true);
 			<?foreach ($arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"] as $value):?>
 				<div  class="exam-review-item-doc">
 					<img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png">
-					<a href="<?=$value["SRC"]?>">
+					<a href="<?=$value["SRC"]?>" download>
 						<?=$value["ORIGINAL_NAME"]?>
 					</a>
 				</div>
@@ -52,7 +52,7 @@ $this->setFrameMode(true);
 		<?else:?>
 			<div  class="exam-review-item-doc">
 				<img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png">
-				<a href="<?=$arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"]["SRC"]?>">
+				<a href="<?=$arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"]["SRC"]?>" download>
 					<?=$arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"]["ORIGINAL_NAME"]?>
 				</a>
 			</div>
