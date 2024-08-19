@@ -24,13 +24,18 @@ foreach($arResult as $arItem):?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
 				<li>
-					<a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+					<a href="<?=$arItem["LINK"]?>" <?if($arItem["PARAMS"]["STYLE"]):?> class="<?=$arItem["PARAMS"]["STYLE"]?>" <?endif?>>
+						<?=$arItem["TEXT"]?>
+					</a>
 					<ul>
 						<?if($arItem["PARAMS"]["TEXT"]):?>
 							<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
 						<?endif;?>
 			<?else:?>
-				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+				<li>
+					<a href="<?=$arItem["LINK"]?>" <?if($arItem["PARAMS"]["STYLE"]):?> class="<?=$arItem["PARAMS"]["STYLE"]?>" <?endif?>>
+						<?=$arItem["TEXT"]?>
+					</a>
 					<ul>
 						<?if($arItem["PARAMS"]["TEXT"]):?>
 							<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
@@ -40,9 +45,17 @@ foreach($arResult as $arItem):?>
 		<?else:?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+				<li>
+					<a href="<?=$arItem["LINK"]?>" <?if($arItem["PARAMS"]["STYLE"]):?> class="<?=$arItem["PARAMS"]["STYLE"]?>" <?endif?>>
+						<?=$arItem["TEXT"]?>
+					</a>
+				</li>
 			<?else:?>
-				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+				<li>
+					<a href="<?=$arItem["LINK"]?>" <?if($arItem["PARAMS"]["STYLE"]):?> class="<?=$arItem["PARAMS"]["STYLE"]?>" <?endif?>>
+						<?=$arItem["TEXT"]?>
+					</a>
+				</li>
 			<?endif?>
 
 		<?endif?>

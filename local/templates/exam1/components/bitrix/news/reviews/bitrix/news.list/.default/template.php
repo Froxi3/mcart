@@ -41,8 +41,8 @@ $this->setFrameMode(true);
 		</div>
 		<div class="review-img-wrap">
 			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
-				<?if($arItem["PREVIEW_PICTURE"]["SRC"]):?>
-					<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="img">
+				<?if($arItem["DETAIL_PICTURE"]["SRC"]):?>
+					<img src="<?=$arItem["resizeImg"]["src"]?>" alt="img">
 				<?else:?>
 					<img src="<?=SITE_TEMPLATE_PATH?>/img/rew/no_photo.jpg" alt="img">
 				<?endif?>
@@ -53,5 +53,5 @@ $this->setFrameMode(true);
 <?endforeach;?>
 
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<br /><?=$arResult["NAV_STRING"]?>
+	<br/><?=$arResult["NAV_STRING"]?>
 <?endif;?>
