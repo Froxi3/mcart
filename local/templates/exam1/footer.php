@@ -193,18 +193,16 @@
                 <div class="loc-block">
                     <div class="address">ул. Летняя, стр.12, офис 512</div>
                     <div class="phone">
-                        <a href="tel:84952128506">
-                            <?$APPLICATION->IncludeComponent(
-                                "bitrix:main.include",
-                                "",
-                                Array(
-                                    "AREA_FILE_SHOW" => "file",
-                                    "AREA_FILE_SUFFIX" => "inc",
-                                    "EDIT_TEMPLATE" => "",
-                                    "PATH" => SITE_DIR . "/include/exam1/footer/phone.php"
-                                )
-                            );?>
-                        </a>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => SITE_DIR . "/include/exam1/footer/phone.php"
+                            )
+                        );?>
                     </div>
                 </div>
                 <div class="main-soc-block">
